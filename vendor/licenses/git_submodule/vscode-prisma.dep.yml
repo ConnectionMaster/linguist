@@ -1,6 +1,6 @@
 ---
 name: vscode-prisma
-version: 6c54cf0068edb882cda3acdf35eaddf6c11dc895
+version: 61079b453ad12f8bae9e5f4f855444ea83f4d231
 type: git_submodule
 homepage: https://github.com/prisma/vscode-prisma
 license: apache-2.0

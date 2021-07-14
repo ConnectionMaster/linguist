@@ -256,10 +256,24 @@ class TestHeuristics < Minitest::Test
     })
   end
 
+  def test_bas_by_heuristics
+    assert_heuristics({
+      "FreeBasic" => all_fixtures("FreeBasic", "*.bas"),
+      "BASIC" => all_fixtures("BASIC", "*.bas"),
+      nil => all_fixtures("VBA", "*.bas")
+    })
+  end
+
   def test_bb_by_heuristics
     assert_heuristics({
       "BitBake" => all_fixtures("BitBake", "*.bb"),
       "BlitzBasic" => all_fixtures("BlitzBasic", "*.bb")
+    })
+  end
+
+  def test_bi_by_heuristics
+    assert_heuristics({
+      "FreeBasic" => all_fixtures("FreeBasic", "*.bi")
     })
   end
 
@@ -309,6 +323,13 @@ class TestHeuristics < Minitest::Test
     assert_heuristics({
       "C#" => all_fixtures("C#", "*.cs"),
       "Smalltalk" => all_fixtures("Smalltalk", "*.cs")
+    })
+  end
+
+  def test_csl_by_heuristics
+    assert_heuristics({
+      "Kusto" => all_fixtures("Kusto", "*.csl"),
+      "XML" => all_fixtures("XML", "*.csl")
     })
   end
 
@@ -372,6 +393,13 @@ class TestHeuristics < Minitest::Test
     })
   end
 
+  def test_ftl_by_heuristics
+    assert_heuristics({
+      "Fluent" => all_fixtures("Fluent", "*.ftl"),
+      "FreeMarker" => all_fixtures("FreeMarker", "*.ftl")
+    }, alt_name="main.ftl")
+  end
+
   def test_gd_by_heuristics
     assert_heuristics({
       "GAP" => all_fixtures("GAP", "*.gd"),
@@ -403,15 +431,11 @@ class TestHeuristics < Minitest::Test
   end
 
   def test_h_by_heuristics
-    ambiguous = [
-        "#{samples_path}/C++/Field.h",
-        "#{samples_path}/C++/rpc.h",
-    ]
     assert_heuristics({
       "Objective-C" => all_fixtures("Objective-C", "*.h"),
-      "C++" => all_fixtures("C++", "*.h") - ambiguous,
-      # no heuristic for C
-      nil => all_fixtures("C", "*.h")
+      "C++" => all_fixtures("C++", "*.h"),
+      # Default to C if the content is ambiguous
+      "C" => all_fixtures("C", "*.h")
     })
   end
 
@@ -484,7 +508,7 @@ class TestHeuristics < Minitest::Test
       "NewLisp" => all_fixtures("NewLisp", "*.lisp") + all_fixtures("NewLisp", "*.lsp")
     }, "main.lsp")
   end
-  
+
   def test_m4_by_heuristics
     assert_heuristics({
       "M4" => all_fixtures("M4", "*.m4"),
@@ -754,6 +778,13 @@ class TestHeuristics < Minitest::Test
   def test_srt_by_heuristics
     assert_heuristics({
       "SubRip Text" => all_fixtures("SubRip Text", "*.srt")
+    })
+  end
+
+  def test_st_by_heuristics
+    assert_heuristics({
+      "StringTemplate" => all_fixtures("StringTemplate", "*.st"),
+      "Smalltalk" => all_fixtures("Smalltalk", "*.st")
     })
   end
 

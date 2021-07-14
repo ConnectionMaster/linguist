@@ -1,6 +1,6 @@
 ---
 name: vscode-lean
-version: 5382c6ac0f58345da50f61c7b01b9150addda099
+version: 9aed9b184e7d82ab37cee95f7d8a0120a09f7b70
 type: git_submodule
 homepage: https://github.com/leanprover/vscode-lean
 license: apache-2.0

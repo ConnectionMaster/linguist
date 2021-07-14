@@ -1,6 +1,6 @@
 ---
 name: linter-lilypond
-version: 63bf9d3306387cb25d8ee3b1da487d803fc0ad36
+version: a8d36288ce51df1d5583a92ae66b16b9830e2c98
 type: git_submodule
 homepage: https://github.com/nwhetsell/linter-lilypond
 license: mit
